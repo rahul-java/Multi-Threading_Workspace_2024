@@ -16,6 +16,7 @@ public class ThreadTest extends Thread {
 	{
 		super(str);
 	}
+	
 	public static void main(String[] args) {
 
 		//ThreadTest t1 = new ThreadTest();
