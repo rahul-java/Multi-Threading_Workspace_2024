@@ -26,4 +26,8 @@ public class HDFCBank {
 		System.out.println("HDFCBank.checkBalance()");
 		System.out.println("Balance is "+this.acctBal);
 	}
+
+	public void profileUpdate() {
+		System.out.println("HDFCBank.profileUpdate()");
+	}
 }

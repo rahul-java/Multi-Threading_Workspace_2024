@@ -15,8 +15,12 @@ public class MainClass {
 		PhonePeThread phonePeThread = new PhonePeThread(rahulBankAcct);
 		phonePeThread.setName("PhonePe-Thread");
 		
+		NetBankingThread netBankingThread = new NetBankingThread(rahulBankAcct);
+		phonePeThread.setName("PhonePe-Thread");
+		
 		atmThread.start();
 		gPayThread.start();
 		phonePeThread.start();
+		netBankingThread.start();
 	}
 }
