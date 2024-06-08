@@ -27,16 +27,19 @@ public class ThreadTest extends Thread {
 		t1.setName("Ist Thread");
 		t2.setName("IInd Thread");
 		
-		t1.start(); //Thread-0 => it creates the independent path of execution
+		t1.start(); //Thread-0 => it creates the independent path of execution :: Runnable Pool
 		//t1.run(); // it will not create the independent path of execution, it execute like a normal instance method
 		t2.start(); //Thread-1
+		//t1.start();  //IllegalThreadStateException
+		//Disadvantages : we can not re-use the thread
 	}
 
+	//Running State
 	@Override
 	public void run() {
-		System.out.println("ThreadTest.run()");
+		System.out.println("ThreadTest.run() ::: "+Thread.currentThread().getName());
 		salaryCalculation();
-	}
+	}//Dead State
 	
 	public void salaryCalculation() {
 		System.out.println("ThreadTest.salaryCalculation()");
