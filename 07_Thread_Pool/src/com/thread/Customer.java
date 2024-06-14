@@ -38,6 +38,12 @@ public class Customer {
 	public void setPremium(Double premium) {
 		this.premium = premium;
 	}
+	@Override
+	public String toString() {
+		return "Customer [customerName=" + customerName + ", policyNumber=" + policyNumber + ", message=" + message
+				+ ", premium=" + premium + "]";
+	}
 	
+
 	
 }
