@@ -47,9 +47,9 @@ public class MultiThreadingForInsurance {
 			
 			//Using Callable
 			TriggerEmailForPolicyCallable triggerEmailForPolicyCallable = new TriggerEmailForPolicyCallable(custList.get(i));
-			Future<Object> submit = ex.submit(triggerEmailForPolicyCallable);
-			//list.add(submit);
-			Customer c=(Customer) submit.get();
+			Future<Object> future = ex.submit(triggerEmailForPolicyCallable);
+			//list.add(future);
+			Customer c=(Customer) future.get();
 			System.out.println(c);
 		}
 		
