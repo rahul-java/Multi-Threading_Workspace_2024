@@ -1,9 +1,14 @@
 package com.app.deadlock;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 public class ThreadTest2 extends Thread {
 
 	Object obj1=null;
 	Object obj2=null;
+	
+	Lock rl=new ReentrantLock();
 	
 	public ThreadTest2(Object obj1,Object obj2) {
 		this.obj1=obj1;
@@ -13,6 +18,16 @@ public class ThreadTest2 extends Thread {
 	@Override
 	public void run() {
 		System.out.println("ThreadTest2.run()");
+		
+		if(rl.tryLock())
+		{
+			//true
+			//stmt
+		}
+		else {
+			//false
+			//stmt
+		}
 		
 		System.out.println("Thread-2 is about to acquire the lock on object-2");
 		synchronized (obj2) {
