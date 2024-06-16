@@ -6,6 +6,12 @@ public class ThreadLocalTest2 extends Thread{
 
 	@Override
 	public void run() {
+		
+		/*if(Thread.currentThread().isInterrupted())
+		{
+			Thread.currentThread().stop();
+		}*/
+		
 		threadLocal.set(100);
 		display();
 		threadLocal.set(threadLocal.get()+10000);
